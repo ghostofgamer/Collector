@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Food : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    public void Die()
     {
-        if (other.gameObject.TryGetComponent(out PlayerMovement player))
-            player.AddTail();
+        gameObject.SetActive(false);
     }
 }

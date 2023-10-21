@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector3 point = _positionHistory[Mathf.Min(index * _gap, _positionHistory.Count - 1)];
             Vector3 moveDirection = point - tail.transform.position;
-            tail.transform.position += moveDirection * 15 * Time.deltaTime;
+            tail.transform.position += moveDirection * _speedMove * Time.deltaTime;
             tail.transform.LookAt(point);
             index++;
         }
