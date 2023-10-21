@@ -9,13 +9,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private int _speedMove;
     [Range(0, 100)]
     [SerializeField] private int _gap;
-   
+
     private List<Vector3> _positionHistory = new List<Vector3>();
     private Player _player;
 
     private void Start()
     {
-        _player = GetComponent<Player>();  
+        _player = GetComponent<Player>();
     }
 
     private void Update()

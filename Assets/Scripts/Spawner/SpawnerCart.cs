@@ -11,8 +11,8 @@ public class SpawnerCart : MonoBehaviour
     private ObjectPool<Cart> _pool;
     private bool _autoExpand = true;
 
-    private void Start()
-    {
-        _pool = new ObjectPool<Cart>(_tailPrefab, _count, _container, _autoExpand);
-    }
+    //private void Start()
+    //{
+    //    _pool = new ObjectPool<Cart>(_tailPrefab, _count, _container, _autoExpand);
+    //}
 }

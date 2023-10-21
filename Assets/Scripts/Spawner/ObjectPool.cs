@@ -7,16 +7,24 @@ public class ObjectPool<T> where T : MonoBehaviour
 {
     [SerializeField] private Transform _container;
 
-    private T _prefab;
+    //private T _prefab;
     private T[] _prefabs;
     private List<T> _poolGeneric;
 
-    public ObjectPool(T prefab, int count, Transform container, bool autoExpand )
+    //////public ObjectPool(T prefab, int count, Transform container, bool autoExpand )
+    //////{
+    //////    _prefab = prefab;
+    //////    _container = container;
+    //////    AutoExpand = autoExpand;
+    //////    GetInitialization(count, prefab);
+    //////}
+
+    public ObjectPool(T[] prefabs, int count, Transform container, bool autoExpand)
     {
-        _prefab = prefab;
+        _prefabs = prefabs;
         _container = container;
         AutoExpand = autoExpand;
-        GetInitialization(count, prefab);
+        GetInitialization(count, prefabs);
     }
 
     public bool AutoExpand { get; private set; }
@@ -45,13 +53,14 @@ public class ObjectPool<T> where T : MonoBehaviour
         return spawned;
     }
 
-    private void GetInitialization(int count,T prefab)
+    private void GetInitialization(int count,T[] prefabs)
     {
         _poolGeneric = new List<T>();
 
         for (int i = 0; i < count; i++)
         {
-            var spawned = Object.Instantiate(prefab, _container.transform);
+            int randomIndex = Random.Range(0, prefabs.Length);
+            var spawned = Object.Instantiate<T>(prefabs[randomIndex], _container.transform);
             spawned.gameObject.SetActive(false);
             _poolGeneric.Add(spawned);
         }

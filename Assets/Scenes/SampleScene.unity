@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -617,7 +617,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -650,7 +650,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -705,8 +705,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1f03bf0d4156742a5e0221bcea1107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 7856550133305076972, guid: a84226999460da045b4106a9c713abc8, type: 3}
+  _prefabs:
+  - {fileID: 7856550133305076972, guid: a84226999460da045b4106a9c713abc8, type: 3}
+  - {fileID: 614201218378807338, guid: d2a3f1371f02cff4dab3db73bea75115, type: 3}
+  - {fileID: 6957898766734077636, guid: 4ef4330daaadcea4fb9894fe912af4ec, type: 3}
+  _cartPrefabs:
+  - {fileID: 9046666259096029470, guid: c19a3cfea12486142bd54e035088060f, type: 3}
+  - {fileID: 4672006514939997129, guid: 4d26d5f68b218094c8cf08d1aa0a0346, type: 3}
+  - {fileID: 4382968466383179268, guid: 9b54a1c19aa958648b6ee7cd39be339b, type: 3}
   _container: {fileID: 318736071}
+  _player: {fileID: 828492554}
 --- !u!4 &764085959
 Transform:
   m_ObjectHideFlags: 0
@@ -741,7 +749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speedRotate: 100
   _speedMove: 5
-  _gap: 100
+  _gap: 60
 --- !u!114 &828492554
 MonoBehaviour:
   m_ObjectHideFlags: 0
