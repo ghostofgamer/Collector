@@ -501,6 +501,7 @@ GameObject:
   - component: {fileID: 1650787489889907399}
   - component: {fileID: 2130554873246946543}
   - component: {fileID: 7636483054718231923}
+  - component: {fileID: 5791595135623688298}
   m_Layer: 0
   m_Name: Cart
   m_TagString: Untagged
@@ -552,6 +553,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d42731211991f2d4eb0d30c21e0a735c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5791595135623688298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649476456679894173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a050d1caca4b2af41afb3d4a28f64c7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &3961546173872090357
