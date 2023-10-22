@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private int _speedRotate;
-    [Range(0, 5)]
+    [Range(0, 15)]
     [SerializeField] private int _speedMove;
     [Range(0, 100)]
     [SerializeField] private int _gap;
