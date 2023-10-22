@@ -18,7 +18,7 @@ public class PlayerTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.TryGetComponent(out Food food))
-            Eat?.Invoke();
+            _player.PickUpItem();
 
         if (other.gameObject.TryGetComponent(out Block block))
             _player.Die();

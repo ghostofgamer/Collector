@@ -17,12 +17,12 @@ public class Spawner : MonoBehaviour
 
     private void OnEnable()
     {
-        _player.GetComponent<PlayerTrigger>().Eat += CartSpawn;
+        _player.PickUp += CartSpawn;
     }
 
     private void OnDisable()
     {
-        _player.GetComponent<PlayerTrigger>().Eat -= CartSpawn;
+        _player.PickUp -= CartSpawn;
     }
 
     private void Start()

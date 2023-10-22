@@ -9,6 +9,13 @@ public class Player : MonoBehaviour
 
     public List<Transform> Tails => _tails;
 
+    public event UnityAction PickUp;
+
+    public void PickUpItem()
+    {
+        PickUp?.Invoke();
+    }
+
     public void AddTailsss(Transform transform)
     {
         _tails.Add(transform);
