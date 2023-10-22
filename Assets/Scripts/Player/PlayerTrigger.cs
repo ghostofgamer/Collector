@@ -8,14 +8,19 @@ public class PlayerTrigger : MonoBehaviour
 {
     private Player _player;
 
+    public event UnityAction Eat;
+
     private void Start()
     {
-        _player = GetComponent<Player>();  
+        _player = GetComponent<Player>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.TryGetComponent(out Food food))
-            _player.AddTail();
+            Eat?.Invoke();
+
+        if (other.gameObject.TryGetComponent(out Block block))
+            _player.Die();
     }
 }

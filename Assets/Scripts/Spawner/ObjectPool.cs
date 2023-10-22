@@ -7,17 +7,8 @@ public class ObjectPool<T> where T : MonoBehaviour
 {
     [SerializeField] private Transform _container;
 
-    //private T _prefab;
     private T[] _prefabs;
     private List<T> _poolGeneric;
-
-    //////public ObjectPool(T prefab, int count, Transform container, bool autoExpand )
-    //////{
-    //////    _prefab = prefab;
-    //////    _container = container;
-    //////    AutoExpand = autoExpand;
-    //////    GetInitialization(count, prefab);
-    //////}
 
     public ObjectPool(T[] prefabs, int count, Transform container, bool autoExpand)
     {

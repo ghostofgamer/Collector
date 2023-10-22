@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnerFood : MonoBehaviour
+public class Spawner : MonoBehaviour
 {
     [SerializeField] private Food[] _prefabs;
     [SerializeField] private Cart[] _cartPrefabs;
     [SerializeField] private Transform _container;
-    [SerializeField]private Player _player;
+    [SerializeField] private Player _player;
 
     private int _count = 60;
     private bool _autoExpand = true;
@@ -17,12 +17,12 @@ public class SpawnerFood : MonoBehaviour
 
     private void OnEnable()
     {
-        _player.Eat += CartSpawn;
+        _player.GetComponent<PlayerTrigger>().Eat += CartSpawn;
     }
 
     private void OnDisable()
     {
-        _player.Eat -= CartSpawn;
+        _player.GetComponent<PlayerTrigger>().Eat -= CartSpawn;
     }
 
     private void Start()
@@ -57,7 +57,7 @@ public class SpawnerFood : MonoBehaviour
 
     public void CartSpawn()
     {
-        int randomIndex = Random.Range(0, _prefabs.Length);
+        int randomIndex = Random.Range(0, _cartPrefabs.Length);
 
         if (_poolCart.TryGetObject(out Cart cart, _cartPrefabs[randomIndex]))
         {

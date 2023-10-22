@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     private void TalesMovement()
     {
         _positionHistory.Insert(0, transform.position);
-        int index = 1;
+        int index = 0;
 
         foreach (var tail in _player.Tails)
         {
