@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public List<Transform> Tails => _tails;
 
     public event UnityAction PickUp;
+    public event UnityAction Dying;
 
     public void PickUpItem()
     {
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
+        Dying?.Invoke();
         Debug.Log("ударился");
     }
 }

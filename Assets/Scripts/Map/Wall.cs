@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Map : MonoBehaviour
+public class Wall : MonoBehaviour
 {
     [SerializeField] private Level _level;
     [SerializeField] private Vector3 _direction;
@@ -22,20 +22,23 @@ public class Map : MonoBehaviour
         _level.Extension -= OnExtension;
     }
 
-    private void Update()
+    private void OnExtension()
     {
-
-        //transform.position = Vector3.Lerp(transform.position, _nextPosition, _speed * Time.deltaTime);
+        Move();
+        Scale();
     }
 
-    private void OnExtension()
+    private void Move()
     {
         _nextPosition = new Vector3
             (transform.position.x + _direction.x,
             transform.position.y + _direction.y,
             transform.position.z + _direction.z);
         transform.position = new Vector3(_nextPosition.x, _nextPosition.y, _nextPosition.z);
+    }
 
+    private void Scale()
+    {
         transform.localScale = new Vector3(transform.localScale.x + _scale, transform.localScale.y, transform.localScale.z);
     }
 }

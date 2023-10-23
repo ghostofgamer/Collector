@@ -8,8 +8,14 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Cart[] _cartPrefabs;
     [SerializeField] private Transform _container;
     [SerializeField] private Player _player;
+    [SerializeField] private Level _level;
 
     private int _count = 60;
+    private int _changer = 3;
+    int _minPositionX = -25;
+    int _maxPositionX = 21;
+    int _minPositionZ = -3;
+    int _maxPositionZ = 40;
     private bool _autoExpand = true;
     private ObjectPool<Food> _pool;
     private ObjectPool<Cart> _poolCart;
@@ -17,11 +23,13 @@ public class Spawner : MonoBehaviour
 
     private void OnEnable()
     {
+        _level.Extension += ChangedValues;
         _player.PickUp += CartSpawn;
     }
 
     private void OnDisable()
     {
+        _level.Extension -= ChangedValues;
         _player.PickUp -= CartSpawn;
     }
 
@@ -34,11 +42,6 @@ public class Spawner : MonoBehaviour
 
     private IEnumerator Spawn()
     {
-        int _minPositionX = -25;
-        int _maxPositionX = 21;
-        int _minPositionZ = 3;
-        int _maxPositionZ = 45;
-
         while (true)
         {
             int randomIndex = Random.Range(0, _prefabs.Length);
@@ -64,5 +67,13 @@ public class Spawner : MonoBehaviour
             cart.transform.position = _player.Tails[_player.Tails.Count - 1].position;
             _player.AddTailsss(cart.transform);
         }
+    }
+
+    private void ChangedValues()
+    {
+        _minPositionX += -_changer;
+        _maxPositionX += _changer;
+        _minPositionZ += -_changer;
+        _maxPositionZ += _changer;
     }
 }

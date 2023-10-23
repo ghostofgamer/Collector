@@ -12,6 +12,8 @@ public class Level : MonoBehaviour
     [SerializeField] private TMP_Text _tailsCountToNextLevelTxt;
     [SerializeField] private TMP_Text _currentCountTailTxt;
     [SerializeField] private TMP_Text _currentLevelTxt;
+    [SerializeField] private ParticleSystem[] _effectParticles;
+    [SerializeField] private Transform _particlePosition;
 
     private int _currentLevel = 1;
     private int _tailsCountToNextLevel = 1;
@@ -59,5 +61,6 @@ public class Level : MonoBehaviour
         _currentLevel++;
         _tailsCountToNextLevel += 1;
         Extension?.Invoke();
+        Instantiate(_effectParticles[Random.Range(0, _effectParticles.Length)], _particlePosition);
     }
 }
