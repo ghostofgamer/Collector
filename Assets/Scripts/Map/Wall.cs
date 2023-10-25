@@ -8,7 +8,6 @@ public class Wall : MonoBehaviour
     [SerializeField] private Level _level;
     [SerializeField] private Vector3 _direction;
 
-    private int _speed = 1;
     private int _scale = 6;
     private Vector3 _nextPosition;
 

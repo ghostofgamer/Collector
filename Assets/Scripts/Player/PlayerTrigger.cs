@@ -8,8 +8,6 @@ public class PlayerTrigger : MonoBehaviour
 {
     private Player _player;
 
-    public event UnityAction Eat;
-
     private void Start()
     {
         _player = GetComponent<Player>();
